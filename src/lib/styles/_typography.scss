@@ -1,3 +1,5 @@
+@import 'variables';
+@import 'mixins';
 // Import Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Homemade+Apple&family=Tangerine:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap');
 
@@ -82,7 +84,7 @@ li {
   border-left: 3px solid $accent;
   padding-left: $spacing-md;
   margin: $spacing-lg 0;
-  color: darken($ink, 5%);
+  color: lighten($parchment, 5%);
 }
 
 .note-tag {
@@ -105,11 +107,27 @@ li {
 
 // Da Vinci styled text
 .davinci-note {
-  @include da-vinci-note;
+  // Bezpośrednia implementacja zamiast mixina
+  font-family: $font-handwritten;
+  font-size: 0.9rem;
+  color: $accent;
+  transform: rotate(-1deg);
+  margin: $spacing-md 0;
+  padding: $spacing-sm;
+  position: relative;
 }
 
 .mirror-writing {
-  @include mirror-writing;
+  // Bezpośrednia implementacja zamiast mixina
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-family: $font-handwritten;
+  font-size: 0.9rem;
+  color: $accent;
+  opacity: 0.8;
+  margin: $spacing-lg 0;
+  padding: $spacing-sm;
+  text-align: justify;
 }
 
 // Entry (bullet journal entries)
@@ -139,7 +157,25 @@ li {
 
 // Form elements
 button {
-  @include button;
+  // Bezpośrednia implementacja zamiast mixina
+  background-color: $accent;
+  color: white;
+  border: none;
+  padding: $spacing-sm $spacing-md;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: $transition-default;
+
+  &:hover {
+    background-color: darken($accent, 10%);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($accent, 0.3);
+  }
 }
 
 input, textarea, select {

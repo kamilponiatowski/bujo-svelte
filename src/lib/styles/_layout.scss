@@ -1,5 +1,5 @@
-@use "sass:color";
-
+@import 'variables';
+@import 'mixins';
 // Reset
 * {
     margin: 0;
@@ -81,7 +81,25 @@
   
   // Page
   .page {
-    @include da-vinci-page;
+    // Zamiast include używamy bezpośrednio mixina
+    background-color: $parchment;
+    padding: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    box-shadow: $shadow-md;
+    border-radius: $border-radius;
+    position: relative;
+    border: 1px solid $line-color;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23f2e8c9"/><path d="M25 0 L25 100 M50 0 L50 100 M75 0 L75 100" stroke="%23e5d0a0" stroke-width="0.5" stroke-dasharray="3,3"/><path d="M0 25 L100 25 M0 50 L100 50 M0 75 L100 75" stroke="%23e5d0a0" stroke-width="0.5" stroke-dasharray="3,3"/></svg>');
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-width: 0 20px 20px 0;
+      border-style: solid;
+      border-color: darken($parchment, 10%) $parchment;
+    }
   }
   
   // Responsive layouts
@@ -95,7 +113,34 @@
   
   // Leonardo layout
   .leonardo-layout {
-    @include leonardo-layout;
+    // Również zamieniamy include
+    display: flex;
+    justify-content: space-between;
+    margin: $spacing-xl 0;
+  
+    @media (min-width: $breakpoint-md) {
+      .main-notes {
+        width: 65%;
+      }
+      
+      .side-notes {
+        width: 30%;
+      }
+    }
+  
+    @media (max-width: ($breakpoint-md - 1)) {
+      flex-direction: column;
+      
+      .main-notes, .side-notes {
+        width: 100%;
+      }
+      
+      .side-notes {
+        margin-top: $spacing-lg;
+        padding-top: $spacing-lg;
+        border-top: 1px dashed $line-color;
+      }
+    }
   }
   
   // Daily log
@@ -230,7 +275,7 @@
     
     .progress-bar {
       height: 10px;
-      background-color: color.scale($parchment, $lightness: 5%);
+      background-color: lighten($parchment, 5%);
       border-radius: $spacing-xs;
       margin: $spacing-sm 0;
       overflow: hidden;
@@ -260,7 +305,12 @@
   
   // Da Vinci sketch
   .davinci-sketch {
-    @include da-vinci-sketch;
+    // Zamieniamy include na bezpośrednią implementację
+    margin: $spacing-lg 0;
+    padding: $spacing-md;
+    border: 1px solid $line-color;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: relative;
   }
   
   // Center text
@@ -273,4 +323,3 @@
     margin-top: $spacing-xl;
     text-align: center;
   }
-  

@@ -6,7 +6,7 @@ const config = {
   // Preprocessor option
   preprocess: preprocess({
     scss: {
-      prependData: '@import "src/lib/styles/_variables.scss";'
+      prependData: '@import "src/lib/styles/_variables.scss"; @import "src/lib/styles/_mixins.scss";'
     }
   }),
 
