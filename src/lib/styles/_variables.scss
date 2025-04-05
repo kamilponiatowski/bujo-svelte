@@ -1,0 +1,45 @@
+// Kolory
+$parchment: #f2e8c9;
+$ink: #4a3b19;
+$accent: #873c1f;
+$light-accent: #c8b273;
+$shadow: rgba(0, 0, 0, 0.2);
+$line-color: #a28e66;
+$background: #f5f3e6;
+
+// Fonty
+$font-primary: 'Crimson Text', Georgia, serif;
+$font-handwritten: 'Homemade Apple', cursive;
+$font-decorative: 'Tangerine', cursive;
+$font-headers: 'Cormorant Garamond', serif;
+
+// Rozmiary
+$sidebar-width: 250px;
+$max-content-width: 1200px;
+$border-radius: 8px;
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+$spacing-xl: 30px;
+
+// Breakpointy
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Tranzycje
+$transition-default: all 0.3s ease;
+$transition-fast: all 0.2s ease;
+$transition-slow: all 0.5s ease;
+
+// Z-index
+$z-sidebar: 100;
+$z-overlay: 90;
+$z-dropdown: 80;
+
+// Cienie
+$shadow-sm: 0 2px 5px $shadow;
+$shadow-md: 0 5px 15px $shadow;
+$shadow-lg: 0 10px 25px $shadow;

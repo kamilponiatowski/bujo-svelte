@@ -1,0 +1,161 @@
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Homemade+Apple&family=Tangerine:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap');
+
+// Base typography
+body {
+  font-family: $font-primary;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $ink;
+}
+
+// Headers
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headers;
+  color: $accent;
+  margin-bottom: $spacing-md;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: $font-decorative;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  border-bottom: 2px solid $light-accent;
+  padding-bottom: $spacing-sm;
+  text-shadow: 1px 1px 2px $shadow;
+  margin-bottom: $spacing-lg;
+}
+
+h2 {
+  font-size: 1.5rem;
+  border-left: 3px solid $accent;
+  padding-left: $spacing-sm;
+  margin: $spacing-xl 0 $spacing-md;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-top: $spacing-lg;
+  color: $accent;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin-top: $spacing-md;
+  color: $accent;
+}
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-md;
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+// Links
+a {
+  color: $ink;
+  text-decoration: none;
+  transition: $transition-default;
+  
+  &:hover {
+    color: $accent;
+  }
+}
+
+// Lists
+ul, ol {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-xl;
+}
+
+li {
+  margin-bottom: $spacing-xs;
+}
+
+// Special text elements
+.quote {
+  font-style: italic;
+  border-left: 3px solid $accent;
+  padding-left: $spacing-md;
+  margin: $spacing-lg 0;
+  color: darken($ink, 5%);
+}
+
+.note-tag {
+  display: inline-block;
+  background-color: rgba($light-accent, 0.3);
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: $spacing-xs;
+  color: $accent;
+}
+
+.sketch-title {
+  font-family: $font-decorative;
+  font-size: 1.3rem;
+  color: $accent;
+  text-align: center;
+  margin-bottom: $spacing-sm;
+}
+
+// Da Vinci styled text
+.davinci-note {
+  @include da-vinci-note;
+}
+
+.mirror-writing {
+  @include mirror-writing;
+}
+
+// Entry (bullet journal entries)
+.entry {
+  display: flex;
+  margin-bottom: $spacing-sm;
+  align-items: flex-start;
+  
+  .bullet {
+    margin-right: $spacing-md;
+    font-size: 1.2rem;
+    min-width: 15px;
+    color: $accent;
+  }
+  
+  .entry-content {
+    flex: 1;
+  }
+}
+
+// Side notes
+.side-notes {
+  font-size: 0.85rem;
+  color: $accent;
+  font-family: $font-handwritten;
+}
+
+// Form elements
+button {
+  @include button;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: $spacing-sm;
+  margin-bottom: $spacing-sm;
+  border: 1px solid $line-color;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: inherit;
+  font-size: 1rem;
+  color: $ink;
+  border-radius: 4px;
+  
+  &:focus {
+    outline: none;
+    border-color: $accent;
+    box-shadow: 0 0 0 3px rgba($accent, 0.1);
+  }
+}
