@@ -51,3 +51,4 @@
   <div class="mirror-writing">
     Ten dziennik zawiera moje myśli, plany i refleksje. Jest mostem między moimi wartościami a codziennymi działaniami.
   </div>
+</PageLayout>

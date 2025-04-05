@@ -55,19 +55,22 @@
 
 <PageLayout id="balance" title="Śledzenie Równowagi Życiowej">
   <table class="values-table">
-    <tr>
-      <th>Tydzień: 29 kwietnia - 5 maja 2024</th>
-      <th class="rating">Ocena (1-10)</th>
-      <th class="reflection">Refleksja</th>
-    </tr>
-    
-    {#each balanceAreas as area}
+    <thead>
       <tr>
-        <td>{area.area}</td>
-        <td class="rating">{area.rating}</td>
-        <td class="reflection">{area.reflection}</td>
+        <th>Tydzień: 29 kwietnia - 5 maja 2024</th>
+        <th class="rating">Ocena (1-10)</th>
+        <th class="reflection">Refleksja</th>
       </tr>
-    {/each}
+    </thead>
+    <tbody>
+      {#each balanceAreas as area}
+        <tr>
+          <td>{area.area}</td>
+          <td class="rating">{area.rating}</td>
+          <td class="reflection">{area.reflection}</td>
+        </tr>
+      {/each}
+    </tbody>
   </table>
   
   <DavinciSketches type="life-balance" title="Wizualizacja równowagi" />

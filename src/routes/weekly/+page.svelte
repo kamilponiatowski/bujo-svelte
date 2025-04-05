@@ -78,32 +78,36 @@
   <h2>Tydzień 19: 6-12 maja 2024</h2>
   
   <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-    <tr>
-      <th style="width: 15%; border: 1px solid var(--line-color); padding: 10px; background-color: rgba(200, 178, 115, 0.3);">Dzień</th>
-      <th style="width: 40%; border: 1px solid var(--line-color); padding: 10px; background-color: rgba(200, 178, 115, 0.3);">Zadania</th>
-      <th style="border: 1px solid var(--line-color); padding: 10px; background-color: rgba(200, 178, 115, 0.3);">Notatki</th>
-    </tr>
-    {#each weekDays as day}
+    <thead>
       <tr>
-        <td style="border: 1px solid var(--line-color); padding: 10px; font-weight: bold;">{day.day}</td>
-        <td style="border: 1px solid var(--line-color); padding: 10px;">
-          {#each day.tasks as task}
-            <div class="entry">
-              <div class="bullet">•</div>
-              <div class="entry-content">{task}</div>
-            </div>
-          {/each}
-        </td>
-        <td style="border: 1px solid var(--line-color); padding: 10px;">
-          {#each day.notes as note}
-            <div class="entry">
-              <div class="bullet">•</div>
-              <div class="entry-content">{note}</div>
-            </div>
-          {/each}
-        </td>
+        <th style="width: 15%; border: 1px solid var(--line-color); padding: 10px; background-color: rgba(200, 178, 115, 0.3);">Dzień</th>
+        <th style="width: 40%; border: 1px solid var(--line-color); padding: 10px; background-color: rgba(200, 178, 115, 0.3);">Zadania</th>
+        <th style="border: 1px solid var(--line-color); padding: 10px; background-color: rgba(200, 178, 115, 0.3);">Notatki</th>
       </tr>
-    {/each}
+    </thead>
+    <tbody>
+      {#each weekDays as day}
+        <tr>
+          <td style="border: 1px solid var(--line-color); padding: 10px; font-weight: bold;">{day.day}</td>
+          <td style="border: 1px solid var(--line-color); padding: 10px;">
+            {#each day.tasks as task}
+              <div class="entry">
+                <div class="bullet">•</div>
+                <div class="entry-content">{task}</div>
+              </div>
+            {/each}
+          </td>
+          <td style="border: 1px solid var(--line-color); padding: 10px;">
+            {#each day.notes as note}
+              <div class="entry">
+                <div class="bullet">•</div>
+                <div class="entry-content">{note}</div>
+              </div>
+            {/each}
+          </td>
+        </tr>
+      {/each}
+    </tbody>
   </table>
   
   <div class="leonardo-layout">
