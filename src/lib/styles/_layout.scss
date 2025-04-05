@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Reset
 * {
     margin: 0;
@@ -21,7 +23,7 @@
     gap: $spacing-lg;
     min-height: 100vh;
     
-    @media (max-width: $breakpoint-md - 1) {
+    @media (max-width: ($breakpoint-md - 1)) {
       grid-template-columns: 1fr;
     }
   }
@@ -83,7 +85,7 @@
   }
   
   // Responsive layouts
-  @media (max-width: $breakpoint-md - 1) {
+  @media (max-width: ($breakpoint-md - 1)) {
     .sidebar {
       position: static;
       height: auto;
@@ -228,7 +230,7 @@
     
     .progress-bar {
       height: 10px;
-      background-color: lighten($parchment, 5%);
+      background-color: color.scale($parchment, $lightness: 5%);
       border-radius: $spacing-xs;
       margin: $spacing-sm 0;
       overflow: hidden;

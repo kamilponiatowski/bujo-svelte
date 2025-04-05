@@ -1,9 +1,11 @@
 <script lang="ts">
-  export let daysInMonth = 31;
-  export let habits: Array<{
+  type Habit = {
     name: string;
     days: Array<boolean | null>;
-  }> = [];
+  };
+
+  export let daysInMonth = 31;
+  export let habits: Habit[] = [];
   
   // Tworzymy tablicę od 1 do daysInMonth
   $: dayNumbers = Array.from({ length: daysInMonth }, (_, i) => i + 1);
@@ -27,7 +29,7 @@
     {#each habits as habit}
       <tr>
         <td class="habit-name">{habit.name}</td>
-        {#each habit.days as completed, i}
+        {#each habit.days as completed}
           <td>
             {#if completed === true}
               ✓

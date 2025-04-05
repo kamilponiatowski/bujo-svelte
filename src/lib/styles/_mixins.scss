@@ -1,3 +1,4 @@
+@use "sass:color";
 // Responsive mixins
 @mixin respond-to($breakpoint) {
     @if $breakpoint == sm {
@@ -46,7 +47,7 @@
       right: 0;
       border-width: 0 20px 20px 0;
       border-style: solid;
-      border-color: darken($parchment, 10%) $parchment;
+      border-color: color.scale($parchment, $lightness: -10%) $parchment;
     }
   }
   
@@ -88,7 +89,7 @@
       }
     }
   
-    @media (max-width: $breakpoint-md - 1) {
+    @media (max-width: ($breakpoint-md - 1)) {
       flex-direction: column;
       
       .main-notes, .side-notes {

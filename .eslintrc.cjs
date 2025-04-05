@@ -28,11 +28,7 @@ module.exports = {
 		}
 	],
 	rules: {
-		// Customize rules here
-		'no-console': 'warn',
-		'no-unused-vars': 'warn',
-		'@typescript-eslint/explicit-function-return-type': 'off',
-		'@typescript-eslint/no-explicit-any': 'warn',
-		'svelte/no-at-html-tags': 'warn'
+		'no-console': 'off',
+		'@typescript-eslint/no-explicit-any': 'off'
 	}
 };
